@@ -1,0 +1,26 @@
+.sideNav {
+    flex: 1;
+    height: 100%;
+
+    .menu {
+        background-color: black;
+        color: white;
+        padding: 1rem;
+
+        a {
+            color: white;
+        }
+    }
+
+    .containerPrincipale {
+        flex: 1;
+        background: url(https://wallpapercave.com/wp/wp2903022.png);
+        height: 100%;
+    }
+}
+
+
+p, ul, li {
+    margin: 0;
+    padding : 0;
+}

@@ -1,0 +1,20 @@
+<mat-sidenav-container class="sideNav">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="menu">
+        <h1>
+            AngularWars
+        </h1>
+        <mat-list>
+            <mat-list-item *ngFor="let path of paths">
+                <a matLine routerLink="{{path.path}}">
+                    <span> {{path.name}} </span>
+                </a>
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+        <div class="containerPrincipale">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
