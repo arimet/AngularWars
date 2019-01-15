@@ -15,7 +15,14 @@
     .containerPrincipale {
         flex: 1;
         background: url(https://wallpapercave.com/wp/wp2903022.png);
-        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        left: 219px;
+        right: 0;
+        overflow: scroll;
     }
 }
 

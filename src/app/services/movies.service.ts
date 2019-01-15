@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Movie } from '../movies/movie';
+import { ResultSwapi } from '../resultSwapi';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -21,6 +21,6 @@ export class MoviesService {
      * Fonction qui récupère les films star wars
      */
     getMovies() {
-        return this.http.get(this.apiStarWars)
+        return this.http.get<ResultSwapi>(this.apiStarWars);
     }
 }

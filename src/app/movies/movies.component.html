@@ -1,5 +1,9 @@
-<div class="movies" *ngIf="movies">
-  <div *ngFor="let movie of movies" class="movie">
-    <p>{{movie.title}}</p>
-  </div>
+<div class="moviesPages">
+    <div class="movies" *ngIf="movies; else loader">
+        <div *ngFor="let movie of movies" class="movie">
+            <p class="title">{{movie.title}} - {{movie.release_date}}</p>
+            <hr>
+            <p class="openingMovie">{{movie.opening_crawl | truncate: 400: true}}</p>
+        </div>
+    </div>
 </div>

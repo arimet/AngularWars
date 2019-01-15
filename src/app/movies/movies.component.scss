@@ -1,14 +1,41 @@
-.movies {
+.moviesPages {
+    flex: 1;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .movies {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
 
-    .movie {
-        flex: 1;
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 3px;
-        width: 33%;
+        .movie {
+            width: 40%;
+            padding: 3rem;
+            margin: 1rem;
+            background: inherit;
+            position: relative;
+
+            p {
+                color: white;
+
+                &.title {
+                    font-size: 1.3rem;
+                }
+            }
+
+            &:after {
+                content: "";
+                background: inherit;
+                position: absolute;
+                left: 0;  //giving minus -25px left position
+                right: 0;
+                top: 0;   //giving minus -25px top position
+                bottom: 0;
+                box-shadow: inset 0 0 0 200px rgba(255,255,255,0.3);
+                filter: blur(2px);
+            }
+        }
+
     }
-
 }
