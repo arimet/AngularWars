@@ -23,7 +23,7 @@ export class MoviesComponent implements OnInit {
 
     getMovies(): void {
         this.movieService.getMovies().subscribe((rez: ResultSwapi) => {
-            this.movies = rez.results;
+            this.movies = rez.results as Movie[];
         });
     }
 

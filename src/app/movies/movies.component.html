@@ -1,9 +1,18 @@
-<div class="moviesPages">
-    <div class="movies" *ngIf="movies; else loader">
+<div class="moviesPages" *ngIf="movies; else loader">
+    <div class="movies">
         <div *ngFor="let movie of movies" class="movie">
             <p class="title">{{movie.title}} - {{movie.release_date}}</p>
             <hr>
             <p class="openingMovie">{{movie.opening_crawl | truncate: 400: true}}</p>
+            <div class="movieDetailBtn">
+                <button mat-fab color="warn" routerLink="/movie/{{movie.episode_id}}"> Détails</button>
+            </div>
         </div>
     </div>
 </div>
+
+<ng-template #loader>
+    <div class="loader">
+        <mat-progress-spinner [mode]="'indeterminate'" [color]="'warn'"></mat-progress-spinner>
+    </div>
+</ng-template>

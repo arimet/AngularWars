@@ -1,0 +1,14 @@
+.pageDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    .movieDetail {
+        background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%,rgba(193,193,193,0.15) 54%,rgba(193,193,193,0) 100%);
+        border: 1px solid white;
+        border-radius: 3px;
+        color: white;
+        width: 50%;
+    }
+}

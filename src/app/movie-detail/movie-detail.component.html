@@ -1,0 +1,14 @@
+<div class="pageDetail" *ngIf="movie; else loader">
+    <div class="movieDetail">
+        <p class="title">{{movie.title}} - {{movie.release_date}}</p>
+        <hr>
+        <p class="openingMovie">{{movie.opening_crawl | truncate: 400: true}}</p>
+        <p>{{movie.director}}</p>
+    </div>
+</div>
+
+<ng-template #loader>
+    <div class="loader">
+        <mat-progress-spinner [mode]="'indeterminate'" [color]="'warn'"></mat-progress-spinner>
+    </div>
+</ng-template>

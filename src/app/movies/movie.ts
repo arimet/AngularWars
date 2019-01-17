@@ -4,4 +4,5 @@ export class Movie {
     release_date: Date;
     director: String;
     opening_crawl: String;
+    characters: String;
 }
