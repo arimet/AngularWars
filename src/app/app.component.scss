@@ -1,41 +1,53 @@
-.sideNav {
-    flex: 1;
-    height: 100%;
+html {
+    font-family: 'Archivo', sans-serif;
 
-    .menu {
-        background-color: black;
-        color: white;
-        padding: 1rem;
+    .sideNav {
+        flex: 1;
+        height: 100%;
 
-        a {
+        .menu {
+            background-color: black;
             color: white;
+            padding: 1rem;
+
+            a {
+                color: white;
+            }
+        }
+
+        .containerPrincipale {
+            flex: 1;
+            background: url(https://wallpapercave.com/wp/wp2903022.png);
+            background-position: center;
+            background-size: cover;
+            position: fixed;
+            bottom: 0;
+            top: 0;
+            left: 219px;
+            right: 0;
+            overflow: scroll;
+        }
+
+        .loader {
+            display: flex;
+            height: 100%;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
         }
     }
 
-    .containerPrincipale {
-        flex: 1;
-        background: url(https://wallpapercave.com/wp/wp2903022.png);
-        background-position: center;
-        background-size: cover;
-        position: fixed;
-        bottom: 0;
-        top: 0;
-        left: 219px;
-        right: 0;
-        overflow: scroll;
+
+    p, ul, li {
+        margin: 0;
+        padding : 0;
     }
 
-    .loader {
-        display: flex;
-        height: 100%;
-        flex: 1;
-        justify-content: center;
-        align-items: center;
+    .mat-expansion-panel-content > .mat-expansion-panel-body {
+        padding: 0 !important;
     }
-}
 
-
-p, ul, li {
-    margin: 0;
-    padding : 0;
+    .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+        color: white;
+    }
 }

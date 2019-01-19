@@ -4,6 +4,7 @@ import { ResultSwapi } from '../resultSwapi';
 import { Movie } from '../movies/movie';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Character } from '../movies/character';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -14,7 +15,7 @@ const httpOptions = {
 })
 export class MoviesService {
 
-    private apiStarWars = 'https://swapi.co/api/films/';  // URL to web api
+    private apiStarWarsMovie = 'https://swapi.co/api/films/';  // URL to web api
 
     constructor(private http: HttpClient) { }
 
@@ -22,13 +23,21 @@ export class MoviesService {
      * Fonction qui récupère les films star wars
      */
     getMovies() {
-        return this.http.get<ResultSwapi>(this.apiStarWars);
+        return this.http.get<ResultSwapi>(this.apiStarWarsMovie);
     }
 
     /**
      * Fonction qui récupère un film star wars
      */
     getMovie(idMovie: number) {
-        return this.http.get<Movie>(this.apiStarWars + idMovie);
+        console.log(idMovie);
+        return this.http.get<Movie>(this.apiStarWarsMovie + idMovie);
+    }
+
+    /**
+     *
+     */
+    getCharacterMovie(charac: string) {
+        return this.http.get<Character>(charac);
     }
 }

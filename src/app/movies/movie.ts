@@ -1,8 +1,9 @@
 export class Movie {
     episode_id: number;
-    title: String;
+    title: string;
     release_date: Date;
-    director: String;
-    opening_crawl: String;
-    characters: String;
+    director: string;
+    opening_crawl: string;
+    characters: string[];
+    producer: string;
 }

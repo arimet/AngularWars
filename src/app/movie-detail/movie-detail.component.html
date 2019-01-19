@@ -1,9 +1,46 @@
 <div class="pageDetail" *ngIf="movie; else loader">
-    <div class="movieDetail">
-        <p class="title">{{movie.title}} - {{movie.release_date}}</p>
-        <hr>
-        <p class="openingMovie">{{movie.opening_crawl | truncate: 400: true}}</p>
-        <p>{{movie.director}}</p>
+    <div class="movieDetail backgroundSW">
+        <p class="title">{{movie.title}}</p>
+        <mat-list>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <p mat-line>Release date : {{movie.release_date}}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <p mat-line>Episode : {{movie.episode_id}}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <p mat-line>Director : {{movie.director}}</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <p mat-line>Producer : {{movie.producer}}</p>
+            </mat-list-item>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-accordion>
+            <mat-expansion-panel (opened)=true>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Opening Crawl
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>{{movie.opening_crawl}}</p>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)=true>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Characters
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <button mat-button color="warn" *ngFor="let charact of characters">{{charact.name}}</button>
+            </mat-expansion-panel>
+        </mat-accordion>
     </div>
 </div>
 

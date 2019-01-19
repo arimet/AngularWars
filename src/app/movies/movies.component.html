@@ -1,11 +1,11 @@
 <div class="moviesPages" *ngIf="movies; else loader">
     <div class="movies">
-        <div *ngFor="let movie of movies" class="movie">
-            <p class="title">{{movie.title}} - {{movie.release_date}}</p>
+        <div *ngFor="let movie of movies | sort:'release_date'; index as i" class="movie">
+            <p class="title">{{movie.title}} - {{movie.release_date | date: 'y'}}</p>
             <hr>
             <p class="openingMovie">{{movie.opening_crawl | truncate: 400: true}}</p>
             <div class="movieDetailBtn">
-                <button mat-fab color="warn" routerLink="/movie/{{movie.episode_id}}"> Détails</button>
+                <button mat-fab color="warn" (click)="goToMovieDetail(movie, i+1)"> Détails</button>
             </div>
         </div>
     </div>
