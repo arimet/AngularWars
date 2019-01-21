@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Movie } from '../movies/movie';
+import { Movie } from '../classe/movie';
 import { MoviesService } from '../services/movies.service';
 import { StoreService } from '../services/store-service.service';
-import { Character } from '../movies/character';
+import { Character } from '../classe/character';
+
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-movie-detail',
@@ -15,7 +17,8 @@ export class MovieDetailComponent implements OnInit {
     constructor(
         private movieService: MoviesService,
         private route: ActivatedRoute,
-        private storeService: StoreService
+        private storeService: StoreService,
+        private router: Router,
     ) { }
 
     movie: Movie;
@@ -50,10 +53,20 @@ export class MovieDetailComponent implements OnInit {
             // On charge les personnages
             this.movie.characters.forEach(charac => {
                 this.movieService.getCharacterMovie(charac).subscribe((rez: Character) => {
-                    this.characters.push(rez);
+                    let charac = new Character();
+                    Object.assign(charac, rez);
+                    this.characters.push(charac);
                 })
             });
         }
+    }
+
+    /**
+     * Fonction qui permet d'aller à la page charactère details
+     */
+    goToCharacterDetail(character: Character): void {
+        this.storeService.setCharacter(character);
+        this.router.navigate([`/character/${character.extractUrlId()}`]);
     }
 
 }

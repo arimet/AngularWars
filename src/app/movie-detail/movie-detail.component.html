@@ -27,7 +27,20 @@
                         Opening Crawl
                     </mat-panel-title>
                 </mat-expansion-panel-header>
-                <p>{{movie.opening_crawl}}</p>
+                <section class="star-wars">
+
+                    <div class="crawl">
+
+                        <div>
+                            <p>Episode {{movie.episode_id}} </p>
+                            <h1>{{movie.title}}</h1>
+                        </div>
+
+                        <p class="lastElement">{{movie.opening_crawl}}</p>
+
+                    </div>
+
+                </section>
             </mat-expansion-panel>
         </mat-accordion>
 
@@ -38,7 +51,7 @@
                         Characters
                     </mat-panel-title>
                 </mat-expansion-panel-header>
-                <button mat-button color="warn" *ngFor="let charact of characters">{{charact.name}}</button>
+                <button (click)="goToCharacterDetail(charact)" mat-button color="warn" *ngFor="let charact of characters">{{charact.name}}</button>
             </mat-expansion-panel>
         </mat-accordion>
     </div>

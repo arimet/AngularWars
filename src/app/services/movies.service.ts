@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ResultSwapi } from '../resultSwapi';
-import { Movie } from '../movies/movie';
+import { ResultSwapi } from '../classe/resultSwapi';
+import { Movie } from '../classe/movie';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Character } from '../movies/character';
+import { Character } from '../classe/character';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

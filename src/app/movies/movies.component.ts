@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Movie } from './movie';
-import { ResultSwapi } from '../resultSwapi';
+import { Movie } from '../classe/movie';
+import { ResultSwapi } from '../classe/resultSwapi';
 import { MoviesService } from '../services/movies.service';
 import { StoreService } from '../services/store-service.service';
 

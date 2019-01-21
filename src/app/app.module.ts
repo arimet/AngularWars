@@ -18,6 +18,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MoviesComponent } from './movies/movies.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { CharacterDetailsComponent } from './character-details/character-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     MoviesComponent,
     TruncatePipe,
     MovieDetailComponent,
-    SortPipe
+    SortPipe,
+    CharacterDetailsComponent
   ],
   imports: [
     BrowserModule,

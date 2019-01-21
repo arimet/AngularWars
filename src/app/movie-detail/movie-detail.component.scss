@@ -34,6 +34,9 @@
             mat-expansion-panel {
                 background: transparent;
                 padding: 0 16px;
+
+                box-shadow: none;
+                border-bottom: 1px solid white;
             }
             mat-panel-title {
                 color: white;
@@ -48,6 +51,12 @@
             }
 
         }
+
+        .star-wars {
+            color: #feda4a;
+            font-family: 'Pathway Gothic One', sans-serif;
+            text-align: justify;
+          }
     }
 
     .backgroundSW {

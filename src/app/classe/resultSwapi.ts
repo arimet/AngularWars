@@ -1,4 +1,4 @@
-import { Movie } from './movies/movie';
+import { Movie } from './movie';
 
 export class ResultSwapi {
     count: number;
